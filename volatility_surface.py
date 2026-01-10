@@ -74,7 +74,7 @@ interp_func = RegularGridInterpolator((S_grid, t_grid), sigma_surface)
 current_vol = float(interp_func([[S_current, t0]]))
 
 target_risk = 0.1
-position_size = target_risk / current_vol
+position_size = target_risk / current_vol**2
 
 print(f"Current volatility: {current_vol:.2%}")
 print(f"Risk-adjusted position size fraction: {position_size:.2f}")
